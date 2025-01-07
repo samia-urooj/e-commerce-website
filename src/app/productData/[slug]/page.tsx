@@ -105,7 +105,9 @@ const productData = {
 
 }
 
-export default function ProductData ({params}:{params : {slug:string } }){
+type ProductKeys = keyof typeof productData;
+
+export default function ProductData ({params}:{params : {slug:ProductKeys } }){
     const product = productData[params.slug];
     const obj = useContext(CartContext);
     console.log(obj)
